@@ -12,6 +12,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*js": [
+      "pretty-quick --staged",
+      "eslit --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.6.2",
     "autoprefixer": "^9.6.4",
@@ -40,17 +52,5 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/runtime": "^7.6.3",
     "babel-loader": "^8.0.0-beta.0"
-  },
-  "husky": {
-    "hooks": {
-      "precommit": "npm run eslint"
-    }
-  },
-  "lint-staged": {
-    "*js": [
-      "pretty-quick --staged",
-      "eslit --fix",
-      "git add"
-    ]
   }
 }

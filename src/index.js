@@ -1,6 +1,7 @@
 import "./css/index.css";
 import avatar from "./assets/avatar.jpg";
 const a = 111
+
 console.log(a)
 const app = document.getElementById("app");
 const h1 = document.createElement("h1");
