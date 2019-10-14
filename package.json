@@ -14,7 +14,7 @@
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "cross-env NODE_ENV=production lint-staged",
       "post-commit": "git update-index --again"
     }
   },
@@ -35,6 +35,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.0-beta.0",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
