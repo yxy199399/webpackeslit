@@ -14,8 +14,7 @@
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "cross-env process.env.NODE_ENV=production lint-staged",
-      "post-commit": "git update-index --again"
+      "pre-commit": "cross-env NODE_ENV=production lint-staged"
     }
   },
   "lint-staged": {
