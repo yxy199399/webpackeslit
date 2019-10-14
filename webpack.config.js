@@ -1,32 +1,32 @@
-const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 module.exports = (env, argv) => {
-  const devMode = argv.mode !== "production";
+  const devMode = argv.mode !== 'production'
   return {
-    entry: ["@babel/polyfill", path.join(__dirname, "./src/index.js")],
+    entry: ['@babel/polyfill', path.join(__dirname, './src/index.js')],
     module: {
       rules: [
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {}
         },
         {
           test: /\.css/,
           use: [
-            devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-            "css-loader",
-            "postcss-loader"
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader'
           ]
         },
         {
           test: /\.html$/,
           use: [
             {
-              loader: "html-loader",
+              loader: 'html-loader',
               options: {
                 minimize: true
               }
@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
           test: /\.(png|jpg|gif)$/,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {}
             }
           ]
@@ -47,13 +47,13 @@ module.exports = (env, argv) => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebPackPlugin({
-        template: "./public/index.html",
-        filename: "./index.html"
+        template: './public/index.html',
+        filename: './index.html'
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
+        filename: '[name].css',
+        chunkFilename: '[id].css'
       })
     ]
-  };
-};
+  }
+}

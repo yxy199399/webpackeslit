@@ -1,6 +1,10 @@
 module.exports = {
   "root": true,
-  "extends": ['prettier'],
+  "extends": [
+    'prettier',
+    'plugin:prettier/recommended',
+    'eslint:recommended'
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
@@ -11,7 +15,7 @@ module.exports = {
     "es6": true,
     "commonjs": true
   },
-  // "parser": "babel-eslint",
+  "parser": "babel-eslint",
   "plugins": ['prettier'],
   "rules": {
     "prettier/prettier": "error",
