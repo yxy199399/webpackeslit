@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --port 3000 --hot",
     "build": "webpack --mode production",
-    "eslint": "eslint ./"
+    "eslint": "eslint ./",
+    "precommit": "lint-staged"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "cross-env NODE_ENV=prod lint-staged"
+      "pre-commit": "cross-env NODE_ENV=production lint-staged"
     }
   },
   "lint-staged": {
